@@ -1,7 +1,40 @@
-User List<br/>
+<html>
+<head>
+<title>User List</title>  
+{% load staticfiles %}
+<link rel=stylesheet type="text/css" href="{% static "style/default.css" %}" title="cool">
 
-{% for i in userlist %}
-name:{{ i.name }} <br/>
-password:{{i.pw}}
+</head>
+<body>    
+<h1>用户列表</h1>
 <hr/>
-{% endfor %}
+
+<table>
+     <tr>
+        <td>
+            name
+        </td>
+        <td>
+            password
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    {% for i in userlist %}
+    <tr>
+        <td>
+            {{ i.name }}
+        </td>
+        <td>
+            {{i.pw}} 
+        </td>
+        <td>
+            <a href="userdel?id={{i.id}}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

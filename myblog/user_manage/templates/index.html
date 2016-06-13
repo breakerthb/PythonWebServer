@@ -2,8 +2,26 @@
 <html>
 <head>
     <title>Welcome</title>
+    {% load staticfiles %}
+    <link rel=stylesheet type="text/css" href="{% static "style/default.css" %}" title="cool">
+
 </head>
-<body>
-<a href="userlist">User Manage</a>
+<body background="{% static "image/bg.jpg"%}">
+<h1>Directionary</h1>
+<hr/>
+<table>
+    <tr>
+        <td>
+            <a href="userlist">User Manage</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="useradd">Add User</a>
+        </td>
+    </tr>
+</table>
+
+
 </body>
 </html>
