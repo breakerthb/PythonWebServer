@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>{% block title %}Default Title{% endblock %}</title>
+    
+    {% load staticfiles %}
+    <link rel=stylesheet type="text/css" href="{% static "style/default.css" %}" title="cool">
+</head>
+
+<body background="{% static "image/bg.jpg"%}">
+	 
+{% include 'nav.html' %}
+
+<h1>
+{% block pagename %}
+Directionary
+{% endblock %}
+</h1>
+<hr/>
+
+{% block content %}
+<div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
+{% endblock %}
+	 
+{% include 'bottom.html' %}
+	 
+{% include 'tongji.html' %}
+	 
+</body>
+</html>
