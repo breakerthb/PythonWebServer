@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}  
+
+{% block pagename %}
+{% if title %}
+{{ title }}
+{% else %}
+用户列表
+{% endif %}
+{% endblock %}
+
+{% block content %}
+    <form action="/searchret/" method="get">
+        <input type="text" name="name">
+        <input type="submit" value="Search">
+    </form>
+{% endblock %}

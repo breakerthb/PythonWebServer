@@ -1,13 +1,18 @@
-<html>
-<head>
-<title>User List</title>  
-{% load staticfiles %}
-<link rel=stylesheet type="text/css" href="{% static "style/default.css" %}" title="cool">
+{% extends "base.html" %}
 
-</head>
-<body>    
-<h1>用户列表</h1>
-<hr/>
+{% block title %}Welcome{% endblock %}  
+
+{% block pagename %}
+
+{% if title %}
+    {{ title }} 
+{% else %}
+    用户列表
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
 
 <table>
      <tr>
@@ -35,6 +40,10 @@
     </tr>
     {% endfor %}
 </table>
+
+{% endblock %}
+
+
 
 </body>
 </html>

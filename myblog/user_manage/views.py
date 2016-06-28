@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from user_manage.models import User
 
 
@@ -27,8 +27,19 @@ def useradd(request):
             name1 = form.cleaned_data['name']
             pw1 = form.cleaned_data['pw']
             User.objects.create(name=name1, pw=pw1)
-            return HttpResponse("Add success...")
+            HttpResponse('<script>alert("Add Succeed");history.back();</script>')
+            return HttpResponseRedirect('/home/')
     else:
         form = LoginForm()
     return render(request, 'useradd.html', {'form': form})
   
+def usersearch(request):
+    return render(request, 'usersearch.html')
+    
+def searchret(request):
+    name1 = request.GET.get('name', '')
+    userlist = User.objects.filter(name = name1)
+    return render(request, 'userlist.html', {'userlist' : userlist, 'title': 'Search Result'})
+    
+    
+

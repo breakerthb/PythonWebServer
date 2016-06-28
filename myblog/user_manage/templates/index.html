@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome</title>
-    {% load staticfiles %}
-    <link rel=stylesheet type="text/css" href="{% static "style/default.css" %}" title="cool">
+{% extends "base.html" %}
 
-</head>
-<body background="{% static "image/bg.jpg"%}">
-<h1>Directionary</h1>
-<hr/>
+{% block title %}Welcome{% endblock %}  
+
+{% block pagename %}Home{% endblock %}
+
+{% block content %}
+
 <table>
     <tr>
         <td>
@@ -20,8 +17,11 @@
             <a href="useradd">Add User</a>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href="usersearch">Search User</a>
+        </td>
+    </tr>
 </table>
 
-
-</body>
-</html>
+{% endblock %}
