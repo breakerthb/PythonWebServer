@@ -21,6 +21,9 @@ from user_manage import views as usr_m_views
 urlpatterns = [
     url(r'^$', usr_m_views.index, name = 'index'),
     url(r'^home', usr_m_views.index, name = 'home'),
+    
+    url(r'^email', usr_m_views.email, name = 'email'),
+    
     url(r'^userlist', usr_m_views.userlist, name = 'userlist'),
     url(r'^useradd', usr_m_views.useradd, name = 'useradd'),
     url(r'^userdel', usr_m_views.userdel, name = 'userdel'),

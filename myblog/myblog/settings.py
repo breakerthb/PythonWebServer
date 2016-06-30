@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     'user_manage',
+    'blogs'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -141,3 +142,12 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.logging.LoggingPanel',
     'debug_toolbar.panels.redirects.RedirectsPanel',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+	  
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.126.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'mail@breakerthb.com'
+EMAIL_HOST_PASSWORD = 'BarryTang870439'
+DEFAULT_FROM_EMAIL = 'mail@breakerthb.com'
